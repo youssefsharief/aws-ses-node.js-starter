@@ -1,15 +1,7 @@
-const aws     = require('aws-sdk');
+const aws = require('aws-sdk');
+const config = require('../config/mailer.config')
+aws.config = {...aws.config, ...config}
+console.log('aaaaaaaaa')
+const ses = new aws.SES()
 
-let ses = {}
-
-module.exports =  {
-    
-    init() {
-        aws.config.loadFromPath(__dirname + '/config.json');
-        ses = new aws.SES()
-    },
-    get ses() {
-        return ses
-    }
-    
-}
+module.exports = ses

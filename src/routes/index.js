@@ -7,9 +7,9 @@ const deleteVerifiedEmailAddress = require('./delete')
 const sendRawEmail = require('./send')
 
 router.get('/emails/verified', listVerifiedEmailAddresses);
-// router.post('/emails/verified', verifyEmailAddress);
-// router.post('/email', sendRawEmail);
-// router.delete('/email', deleteVerifiedEmailAddress);
+router.post('/emails/verified', verifyEmailAddress);
+router.post('/email', sendRawEmail);
+router.delete('/emails/verified/:email', deleteVerifiedEmailAddress);
 
 
 

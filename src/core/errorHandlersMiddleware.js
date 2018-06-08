@@ -1,12 +1,6 @@
 
 module.exports = app => {
 
-    app.use(function (err, req, res, next) {
-        if (err.name = 'CastError') {
-             return res.status(500).json({msg: 'Internal Server Error'})
-        } else return next(err)
-    });
-
 
     // catch 404 and forward to error handler
     app.use(function (req, res, next) {
